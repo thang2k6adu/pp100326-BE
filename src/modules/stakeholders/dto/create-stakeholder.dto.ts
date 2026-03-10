@@ -1,5 +1,15 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsNotEmpty, IsOptional, MaxLength, IsEnum, IsUUID } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsOptional,
+  MaxLength,
+  IsEnum,
+  IsUUID,
+  IsInt,
+  Min,
+  Max,
+} from 'class-validator';
 import { Classification, Level, Attitude } from '@prisma/client';
 
 export class CreateStakeholderDto {
@@ -68,4 +78,11 @@ export class CreateStakeholderDto {
   @IsEnum(Attitude)
   @IsOptional()
   desiredAttitude?: Attitude;
+
+  @ApiProperty({ example: 15, required: false })
+  @IsInt()
+  @Min(0)
+  @Max(100)
+  @IsOptional()
+  score?: number;
 }

@@ -41,7 +41,23 @@ async function main() {
   for (const item of stakeholders) {
     await prisma.stakeholderTemplate.upsert({
       where: { stakeholderId: item.stakeholderId },
-      update: {},
+      update: {
+        name: item.identification.name,
+        positionRole: item.identification.positionRole || null,
+        contactInformation: item.identification.contactInformation || null,
+        requirements: item.assessment.requirements || null,
+        expectations: item.assessment.expectations || null,
+        phaseOfMostImpact: Array.isArray(item.assessment.phaseOfMostImpact)
+          ? item.assessment.phaseOfMostImpact.join(', ')
+          : item.assessment.phaseOfMostImpact || null,
+        classification: (item.classificationAndEngagement.classification as Classification) || null,
+        power: (item.classificationAndEngagement.power as Level) || null,
+        interest: (item.classificationAndEngagement.interest as Level) || null,
+        influence: (item.classificationAndEngagement.influence as Level) || null,
+        currentAttitude: (item.classificationAndEngagement.currentAttitude as Attitude) || null,
+        desiredAttitude: (item.classificationAndEngagement.desiredAttitude as Attitude) || null,
+        score: item.classificationAndEngagement.score || null,
+      },
       create: {
         stakeholderId: item.stakeholderId,
         name: item.identification.name,
@@ -58,6 +74,7 @@ async function main() {
         influence: (item.classificationAndEngagement.influence as Level) || null,
         currentAttitude: (item.classificationAndEngagement.currentAttitude as Attitude) || null,
         desiredAttitude: (item.classificationAndEngagement.desiredAttitude as Attitude) || null,
+        score: item.classificationAndEngagement.score || null,
       },
     });
   }

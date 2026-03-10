@@ -131,6 +131,7 @@ model Stakeholder {
   influence       Level?
   currentAttitude Attitude?
   desiredAttitude Attitude?
+  score           Int?
 
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
@@ -157,6 +158,7 @@ model StakeholderTemplate {
   influence          Level?
   currentAttitude    Attitude?
   desiredAttitude    Attitude?
+  score              Int?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

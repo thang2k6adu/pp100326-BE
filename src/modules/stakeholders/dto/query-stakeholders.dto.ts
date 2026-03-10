@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsOptional, IsString, IsInt, Min, Max, IsUUID, IsEnum } from 'class-validator';
 import { Type } from 'class-transformer';
-import { Classification, Level } from '@prisma/client';
+import { Classification, Level, Attitude } from '@prisma/client';
 
 export class QueryStakeholdersDto {
   @ApiProperty({ required: false, default: 1, minimum: 1 })
@@ -43,4 +43,19 @@ export class QueryStakeholdersDto {
   @IsEnum(Level)
   @IsOptional()
   interest?: Level;
+
+  @ApiProperty({ enum: Level, required: false })
+  @IsEnum(Level)
+  @IsOptional()
+  influence?: Level;
+
+  @ApiProperty({ enum: Attitude, required: false })
+  @IsEnum(Attitude)
+  @IsOptional()
+  currentAttitude?: Attitude;
+
+  @ApiProperty({ enum: Attitude, required: false })
+  @IsEnum(Attitude)
+  @IsOptional()
+  desiredAttitude?: Attitude;
 }

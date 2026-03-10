@@ -25,6 +25,7 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:seed": "ts-node prisma/seed.ts",
     "prisma:studio": "prisma studio",
+    "db:seed": "npm run prisma:seed",
     "prepare": "husky || git config core.hooksPath .husky || true"
   },
   "dependencies": {

@@ -38,6 +38,18 @@ export class StakeholdersService {
       where.interest = query.interest;
     }
 
+    if (query.influence) {
+      where.influence = query.influence;
+    }
+
+    if (query.currentAttitude) {
+      where.currentAttitude = query.currentAttitude;
+    }
+
+    if (query.desiredAttitude) {
+      where.desiredAttitude = query.desiredAttitude;
+    }
+
     if (query.search) {
       where.OR = [
         { name: { contains: query.search, mode: 'insensitive' as const } },
