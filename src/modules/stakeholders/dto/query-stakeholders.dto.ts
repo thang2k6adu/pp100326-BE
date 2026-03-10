@@ -29,6 +29,11 @@ export class QueryStakeholdersDto {
   @IsOptional()
   projectId?: string;
 
+  @ApiProperty({ example: 'Management & Leadership', required: false })
+  @IsString()
+  @IsOptional()
+  group?: string;
+
   @ApiProperty({ enum: Classification, required: false })
   @IsEnum(Classification)
   @IsOptional()

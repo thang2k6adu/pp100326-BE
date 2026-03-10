@@ -50,6 +50,7 @@ async function main() {
         phaseOfMostImpact: Array.isArray(item.assessment.phaseOfMostImpact)
           ? item.assessment.phaseOfMostImpact.join(', ')
           : item.assessment.phaseOfMostImpact || null,
+        group: item.classificationAndEngagement.group || null,
         classification: (item.classificationAndEngagement.classification as Classification) || null,
         power: (item.classificationAndEngagement.power as Level) || null,
         interest: (item.classificationAndEngagement.interest as Level) || null,
@@ -68,6 +69,7 @@ async function main() {
         phaseOfMostImpact: Array.isArray(item.assessment.phaseOfMostImpact)
           ? item.assessment.phaseOfMostImpact.join(', ')
           : item.assessment.phaseOfMostImpact || null,
+        group: item.classificationAndEngagement.group || null,
         classification: (item.classificationAndEngagement.classification as Classification) || null,
         power: (item.classificationAndEngagement.power as Level) || null,
         interest: (item.classificationAndEngagement.interest as Level) || null,

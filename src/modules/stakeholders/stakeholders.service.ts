@@ -26,6 +26,10 @@ export class StakeholdersService {
       where.projectId = query.projectId;
     }
 
+    if (query.group) {
+      where.group = query.group;
+    }
+
     if (query.classification) {
       where.classification = query.classification;
     }

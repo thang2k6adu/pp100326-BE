@@ -49,6 +49,11 @@ export class CreateStakeholderDto {
   @IsOptional()
   phaseOfMostImpact?: string;
 
+  @ApiProperty({ required: false })
+  @IsString()
+  @IsOptional()
+  group?: string;
+
   @ApiProperty({ enum: Classification, required: false })
   @IsEnum(Classification)
   @IsOptional()

@@ -125,6 +125,7 @@ model Stakeholder {
   phaseOfMostImpact String? @db.Text // Can be stored as JSON array if needed, but String is simpler for MVP
 
   // Classification & Engagement (Section 3)
+  group           String? @db.VarChar(255)
   classification  Classification?
   power           Level?
   interest        Level?
@@ -152,6 +153,7 @@ model StakeholderTemplate {
   requirements       String?         @db.Text
   expectations       String?         @db.Text
   phaseOfMostImpact  String?         @db.Text // Store as comma-separated string or JSON
+  group              String?         @db.VarChar(255)
   classification     Classification?
   power              Level?
   interest           Level?
