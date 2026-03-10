@@ -1,0 +1,1829 @@
+[
+  {
+    "stakeholderId": "SH-001",
+    "identification": {
+      "name": "Project Sponsor",
+      "positionRole": "Người tài trợ / Bảo trợ dự án",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Phê duyệt scope, ngân sách và các thay đổi lớn; nhận báo cáo tiến độ định kỳ; đảm bảo dự án align với chiến lược tổ chức",
+      "expectations": "Dự án hoàn thành đúng hạn, đúng ngân sách; ROI rõ ràng; không có surprises lớn",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "High",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Supportive",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-002",
+    "identification": {
+      "name": "Project Manager",
+      "positionRole": "Người quản lý dự án",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Toàn quyền điều phối team, phân công task, kiểm soát budget và timeline; thông tin rõ ràng từ Sponsor và team",
+      "expectations": "Dự án thành công; team phối hợp tốt; được hỗ trợ đủ resource",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Executing", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "High",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Leading",
+      "desiredAttitude": "Leading"
+    }
+  },
+  {
+    "stakeholderId": "SH-003",
+    "identification": {
+      "name": "Program Manager",
+      "positionRole": "Quản lý chương trình (nếu dự án thuộc program lớn hơn)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Dự án align với program objectives; báo cáo milestone đúng hạn; không conflict resource với các dự án khác trong program",
+      "expectations": "Dự án đóng góp đủ vào program goals; không gây delay program",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "High",
+      "interest": "Medium",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-004",
+    "identification": {
+      "name": "Portfolio Manager",
+      "positionRole": "Quản lý danh mục dự án",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Dự án đáp ứng portfolio KPIs; báo cáo tài chính minh bạch; không vượt ngân sách portfolio",
+      "expectations": "Portfolio balance tốt; dự án mang lại giá trị chiến lược",
+      "phaseOfMostImpact": ["Initiating", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-005",
+    "identification": {
+      "name": "Steering Committee",
+      "positionRole": "Ban chỉ đạo dự án",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Báo cáo tiến độ định kỳ; escalation kịp thời khi có rủi ro lớn; phê duyệt các quyết định vượt thẩm quyền PM",
+      "expectations": "Dự án theo đúng định hướng chiến lược; rủi ro được kiểm soát",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "High",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-006",
+    "identification": {
+      "name": "CEO / Executive Leadership",
+      "positionRole": "Ban lãnh đạo cấp cao (CEO, CTO, CFO, COO)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Dự án phục vụ mục tiêu kinh doanh; không gây gián đoạn hoạt động; báo cáo tóm tắt cấp cao",
+      "expectations": "Kết quả kinh doanh rõ ràng; không vượt ngân sách; đội ngũ hoạt động hiệu quả",
+      "phaseOfMostImpact": ["Initiating", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "High",
+      "interest": "Low",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-007",
+    "identification": {
+      "name": "Functional Managers",
+      "positionRole": "Quản lý các phòng ban liên quan",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Không gián đoạn hoạt động phòng ban; nhân sự phòng ban được trả về đúng hạn sau dự án; phối hợp rõ ràng",
+      "expectations": "Nhân sự không bị overload; dự án không ảnh hưởng KPI phòng ban",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-008",
+    "identification": {
+      "name": "Project Team Members",
+      "positionRole": "Thành viên nhóm dự án (chung)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Yêu cầu rõ ràng; deadline hợp lý; không thay đổi scope đột ngột; công nhận đóng góp",
+      "expectations": "Môi trường làm việc tốt; phát triển kỹ năng; hoàn thành dự án thành công",
+      "phaseOfMostImpact": ["Planning", "Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-009",
+    "identification": {
+      "name": "Technical Lead",
+      "positionRole": "Trưởng nhóm kỹ thuật",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Quyền quyết định về kiến trúc hệ thống; technical requirements rõ ràng; đủ thời gian để thiết kế đúng",
+      "expectations": "Hệ thống scalable và maintainable; team follow technical standards",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "High",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-010",
+    "identification": {
+      "name": "Business Analyst",
+      "positionRole": "Phân tích nghiệp vụ",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Access đến stakeholders để thu thập requirements; tài liệu được review và approve kịp thời; scope change được kiểm soát",
+      "expectations": "Requirements rõ ràng, không ambiguous; ít rework; được tham gia từ giai đoạn đầu",
+      "phaseOfMostImpact": ["Initiating", "Planning"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-011",
+    "identification": {
+      "name": "System Analyst",
+      "positionRole": "Phân tích hệ thống",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Access đến tài liệu hệ thống hiện tại; phối hợp tốt với BA và dev team; timeline đủ cho analysis",
+      "expectations": "System design chính xác; ít conflict với legacy systems",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-012",
+    "identification": {
+      "name": "Developers / Engineers",
+      "positionRole": "Lập trình viên / Kỹ sư phát triển",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Requirements rõ ràng và ổn định; tools và environment đầy đủ; không bị interrupt liên tục; code review fair",
+      "expectations": "Môi trường dev tốt; timeline hợp lý; được học công nghệ mới; sản phẩm chất lượng",
+      "phaseOfMostImpact": ["Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-013",
+    "identification": {
+      "name": "UI/UX Designer",
+      "positionRole": "Thiết kế giao diện / Trải nghiệm người dùng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Design brief rõ ràng; user persona cụ thể; feedback kịp thời; timeline thiết kế hợp lý; design được implement đúng",
+      "expectations": "UI đẹp, UX mượt; có creative freedom; portfolio material tốt",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-014",
+    "identification": {
+      "name": "Database Administrator (DBA)",
+      "positionRole": "Quản trị cơ sở dữ liệu",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Database schema rõ ràng; quyền access phù hợp; backup và recovery plan; performance requirements cụ thể",
+      "expectations": "Database stable và performant; không mất dữ liệu; schema không thay đổi đột ngột",
+      "phaseOfMostImpact": ["Planning", "Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-015",
+    "identification": {
+      "name": "DevOps Engineer",
+      "positionRole": "Kỹ sư vận hành phát triển / Quản lý hạ tầng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Infrastructure requirements rõ ràng; budget cho hosting/CI-CD; monitoring tools; backup strategy; access đến cloud services",
+      "expectations": "Uptime 95%+; deployment automation; cost optimization trong budget; rollback nhanh khi có sự cố",
+      "phaseOfMostImpact": ["Executing", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-016",
+    "identification": {
+      "name": "Quality Assurance (QA) Team",
+      "positionRole": "Đội kiểm thử chất lượng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Test cases rõ ràng; access môi trường test; đủ thời gian test kỹ; bug tracking system; requirements ổn định",
+      "expectations": "Phát hiện bugs sớm; sản phẩm stable trước demo; regression test sau mỗi update; quality metrics đạt chuẩn",
+      "phaseOfMostImpact": ["Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-017",
+    "identification": {
+      "name": "Scrum Master",
+      "positionRole": "Người điều phối Scrum (Agile projects)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Team follow Agile process; impediments được remove nhanh; retrospectives được thực hiện nghiêm túc",
+      "expectations": "Team velocity tăng qua mỗi sprint; ít blockers; môi trường tự tổ chức",
+      "phaseOfMostImpact": ["Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-018",
+    "identification": {
+      "name": "Product Owner",
+      "positionRole": "Chủ sản phẩm (Agile projects)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Prioritize backlog rõ ràng; available cho team khi cần; quyết định nhanh về requirements; user stories đủ chi tiết",
+      "expectations": "Sản phẩm đáp ứng user needs; ROI tối đa; backlog luôn được groom tốt",
+      "phaseOfMostImpact": ["Planning", "Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "High",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-019",
+    "identification": {
+      "name": "Technical Writer / Content Creator",
+      "positionRole": "Người viết tài liệu kỹ thuật",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Product knowledge đầy đủ; access vào hệ thống; screenshot và demo materials; review timeline",
+      "expectations": "User guide dễ hiểu; API documentation đầy đủ; demo script chuyên nghiệp; onboarding materials quality",
+      "phaseOfMostImpact": ["Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Low",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-020",
+    "identification": {
+      "name": "Human Resources (HR)",
+      "positionRole": "Phòng Nhân sự",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Thông báo sớm về nhu cầu nhân sự; tuân thủ chính sách lao động; báo cáo workload và overtime",
+      "expectations": "Nhân sự không bị overwork; tuân thủ labor law; retention tốt",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-021",
+    "identification": {
+      "name": "Finance / Accounting",
+      "positionRole": "Phòng Tài chính / Kế toán",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Budget tracking chính xác; invoice và payment đúng hạn; financial reporting theo chuẩn; không vượt ngân sách phê duyệt",
+      "expectations": "Budget được kiểm soát; expense report minh bạch; không có tài chính bất thường",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-022",
+    "identification": {
+      "name": "Procurement / Purchasing",
+      "positionRole": "Phòng Mua sắm / Thu mua",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Purchase requests đầy đủ thông tin; tuân thủ procurement policy; lead time hợp lý",
+      "expectations": "Mua đúng hàng, đúng giá, đúng thời điểm; vendor được vetting kỹ",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-023",
+    "identification": {
+      "name": "Legal / Compliance Team",
+      "positionRole": "Phòng Pháp lý / Tuân thủ",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Review contracts và agreements; Terms of Service và Privacy Policy; tuân thủ luật dữ liệu; IP clearance",
+      "expectations": "Tổ chức không có rủi ro pháp lý; licensing đúng cách; copyright compliance",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-024",
+    "identification": {
+      "name": "Security Team / Data Privacy Officer",
+      "positionRole": "Đội bảo mật / Người phụ trách bảo vệ dữ liệu",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tuân thủ GDPR/PDPA; password hashing standards; data retention policy; security audit pass; không có data breach",
+      "expectations": "Hệ thống bảo mật; user data được bảo vệ; compliance checklist hoàn tất; privacy policy rõ ràng",
+      "phaseOfMostImpact": ["Planning", "Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-025",
+    "identification": {
+      "name": "IT Support / Help Desk",
+      "positionRole": "Bộ phận Hỗ trợ IT",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Documentation về hệ thống; training cho support staff; escalation path rõ ràng; SLA được định nghĩa",
+      "expectations": "Ít tickets; hệ thống ổn định; user tự giải quyết được issues cơ bản",
+      "phaseOfMostImpact": ["Closing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-026",
+    "identification": {
+      "name": "Facilities Management",
+      "positionRole": "Quản lý cơ sở vật chất",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Thông báo sớm về nhu cầu không gian làm việc; tuân thủ building policies",
+      "expectations": "Không gian làm việc đầy đủ; không gây gián đoạn hoạt động facilities",
+      "phaseOfMostImpact": ["Planning"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-027",
+    "identification": {
+      "name": "Training & Development",
+      "positionRole": "Phòng Đào tạo & Phát triển",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Thông báo nhu cầu training sớm; tài liệu training được chuẩn bị; schedule phù hợp với team",
+      "expectations": "Team có đủ kỹ năng; training hiệu quả; không làm gián đoạn dự án",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-028",
+    "identification": {
+      "name": "Marketing Team",
+      "positionRole": "Đội Marketing",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Brand guidelines; target audience insights; launch timeline; content marketing support",
+      "expectations": "Tăng user adoption; tạo buzz trước launch; thu hút beta users chất lượng",
+      "phaseOfMostImpact": ["Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-029",
+    "identification": {
+      "name": "Sales Team",
+      "positionRole": "Đội Kinh doanh",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Product features phù hợp với market needs; demo materials; pricing clarity; launch date cụ thể",
+      "expectations": "Sản phẩm dễ bán; pipeline rõ ràng; không có gap giữa promise và delivery",
+      "phaseOfMostImpact": ["Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-030",
+    "identification": {
+      "name": "Communications / PR Team",
+      "positionRole": "Đội Truyền thông / Quan hệ công chúng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Thông báo sớm về milestone để chuẩn bị communication; messaging nhất quán; approval trước khi publish",
+      "expectations": "Hình ảnh tổ chức tốt; không có thông tin tiêu cực lan rộng; launch được truyền thông tốt",
+      "phaseOfMostImpact": ["Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-031",
+    "identification": {
+      "name": "Project Management Office (PMO)",
+      "positionRole": "Văn phòng Quản lý Dự án",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tuân thủ PM methodology và templates; báo cáo tiến độ theo chuẩn PMO; lessons learned được capture",
+      "expectations": "Dự án là mẫu tốt cho các dự án khác; PM standards được nâng cao",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-032",
+    "identification": {
+      "name": "Change Control Board (CCB)",
+      "positionRole": "Ban Kiểm soát Thay đổi",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Change requests đầy đủ thông tin và impact analysis; submit đúng quy trình; không bypass CCB",
+      "expectations": "Scope được kiểm soát; không có uncontrolled changes; tài liệu thay đổi đầy đủ",
+      "phaseOfMostImpact": ["Planning", "Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "High",
+      "interest": "Medium",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-033",
+    "identification": {
+      "name": "Risk Management Committee",
+      "positionRole": "Ủy ban Quản lý Rủi ro",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Risk register được cập nhật thường xuyên; escalate risks kịp thời; mitigation plans cụ thể",
+      "expectations": "Rủi ro được identify và mitigate; không có surprises lớn; dự án nằm trong risk appetite",
+      "phaseOfMostImpact": ["Planning", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-034",
+    "identification": {
+      "name": "Quality Assurance Manager",
+      "positionRole": "Quản lý Đảm bảo Chất lượng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Quality standards được định nghĩa rõ; test results được báo cáo; quality gates được respect",
+      "expectations": "Sản phẩm đáp ứng quality standards; ít defects lọt qua production",
+      "phaseOfMostImpact": ["Planning", "Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-035",
+    "identification": {
+      "name": "Audit Team",
+      "positionRole": "Đội Kiểm toán",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Access đến tài liệu dự án; transparency về chi phí và quyết định; tuân thủ audit schedule",
+      "expectations": "Không có gian lận hay sai phạm; tài chính minh bạch; processes được tuân thủ",
+      "phaseOfMostImpact": ["Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-036",
+    "identification": {
+      "name": "Compliance Officers",
+      "positionRole": "Cán bộ Tuân thủ",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tuân thủ regulations và internal policies; báo cáo compliance issues kịp thời; không bypass compliance checks",
+      "expectations": "Tổ chức không bị phạt hay vi phạm; dự án trong compliance framework",
+      "phaseOfMostImpact": ["Planning", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-037",
+    "identification": {
+      "name": "End Users",
+      "positionRole": "Người dùng cuối",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Sản phẩm dễ dùng, giải quyết đúng pain point; ổn định, không có critical bugs; hỗ trợ khi cần",
+      "expectations": "Tiết kiệm thời gian và công sức; trải nghiệm tốt; sản phẩm liên tục cải thiện",
+      "phaseOfMostImpact": ["Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "High",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-038",
+    "identification": {
+      "name": "Customer / Client",
+      "positionRole": "Khách hàng / Người thuê dịch vụ",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Sản phẩm/dịch vụ đúng như thỏa thuận; tiến độ transparent; support kịp thời; ROI rõ ràng",
+      "expectations": "Value for money; ít rủi ro; đối tác đáng tin cậy lâu dài",
+      "phaseOfMostImpact": ["Initiating", "Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-039",
+    "identification": {
+      "name": "Customer Representatives",
+      "positionRole": "Đại diện Khách hàng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tham gia vào requirements gathering; feedback được lắng nghe; access đến demo/prototype sớm",
+      "expectations": "Tiếng nói của khách hàng được đại diện đúng; sản phẩm phù hợp thực tế",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-040",
+    "identification": {
+      "name": "Beta Users / Early Adopters",
+      "positionRole": "Người dùng thử nghiệm sớm",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Sản phẩm đủ stable để test; kênh feedback rõ ràng; phản hồi được ghi nhận và cải thiện",
+      "expectations": "Trải nghiệm exclusive; ảnh hưởng đến product direction; sản phẩm ngày càng tốt hơn",
+      "phaseOfMostImpact": ["Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "High",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-041",
+    "identification": {
+      "name": "User Groups / Communities",
+      "positionRole": "Nhóm / Cộng đồng người dùng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Engagement từ team; features được phát triển theo nhu cầu community; roadmap transparent",
+      "expectations": "Sản phẩm ngày càng hoàn thiện; cộng đồng được tôn trọng; networking",
+      "phaseOfMostImpact": ["Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-042",
+    "identification": {
+      "name": "Customer Support Team",
+      "positionRole": "Đội Hỗ trợ Khách hàng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tài liệu sản phẩm đầy đủ; được training trước launch; escalation path rõ ràng; ít bugs gây ticket",
+      "expectations": "Ít tickets; dễ hỗ trợ; không bị overwhelm sau launch",
+      "phaseOfMostImpact": ["Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-043",
+    "identification": {
+      "name": "Cloud Service Providers",
+      "positionRole": "Nhà cung cấp dịch vụ đám mây (AWS / Azure / GCP / Firebase)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Thanh toán đúng hạn; sử dụng đúng terms of service; không vượt usage limits",
+      "expectations": "Uptime SLA đạt chuẩn; support responsive; pricing ổn định",
+      "phaseOfMostImpact": ["Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Low",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-044",
+    "identification": {
+      "name": "Hosting Providers",
+      "positionRole": "Nhà cung cấp Hosting (Vercel / Railway / Heroku)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Thanh toán đúng hạn; không vi phạm usage policy; deployment đúng cấu hình",
+      "expectations": "Deploy nhanh; downtime tối thiểu; pricing trong budget",
+      "phaseOfMostImpact": ["Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Low",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-045",
+    "identification": {
+      "name": "Third-party API Providers",
+      "positionRole": "Nhà cung cấp API bên thứ ba",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tuân thủ API terms of use; rate limits được respect; API key bảo mật",
+      "expectations": "API stable và reliable; documentation rõ ràng; không deprecate đột ngột",
+      "phaseOfMostImpact": ["Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Low",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-046",
+    "identification": {
+      "name": "Software License Providers",
+      "positionRole": "Nhà cung cấp Giấy phép Phần mềm",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Thanh toán đúng license fees; không vi phạm license terms; báo cáo usage nếu cần",
+      "expectations": "License ổn định; không bị revoke; support khi có issues",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Medium",
+      "interest": "Low",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-047",
+    "identification": {
+      "name": "Contractors / Freelancers",
+      "positionRole": "Nhà thầu / Freelancer",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Scope of work rõ ràng; thanh toán đúng hạn; feedback kịp thời; access đầy đủ để làm việc",
+      "expectations": "Dự án thành công; payment đúng cam kết; có thể tiếp tục hợp tác",
+      "phaseOfMostImpact": ["Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-048",
+    "identification": {
+      "name": "Subcontractors",
+      "positionRole": "Nhà thầu phụ",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Deliverables rõ ràng; communication với contractor chính; thanh toán qua contractor",
+      "expectations": "Công việc rõ ràng; không bị delay vì upstream; payment đúng hạn",
+      "phaseOfMostImpact": ["Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-049",
+    "identification": {
+      "name": "Consultants / Advisors",
+      "positionRole": "Cố vấn / Tư vấn độc lập",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Scope rõ ràng; access đến thông tin cần thiết; feedback được lắng nghe",
+      "expectations": "Chuyên môn được sử dụng hiệu quả; recommendations được implement; relationship tốt",
+      "phaseOfMostImpact": ["Initiating", "Planning"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-050",
+    "identification": {
+      "name": "Hardware Vendors",
+      "positionRole": "Nhà cung cấp Phần cứng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Purchase orders đúng spec; thanh toán đúng hạn; warranty được tôn trọng",
+      "expectations": "Giao hàng đúng hạn; chất lượng đảm bảo; after-sales support tốt",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-051",
+    "identification": {
+      "name": "Business Partners",
+      "positionRole": "Đối tác Kinh doanh",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Partnership agreement rõ ràng; mutual benefits; communication định kỳ; IP được bảo vệ",
+      "expectations": "Win-win relationship; growth cùng nhau; trust và transparency",
+      "phaseOfMostImpact": ["Initiating", "Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-052",
+    "identification": {
+      "name": "Strategic Partners",
+      "positionRole": "Đối tác Chiến lược",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Strategic alignment; joint planning; shared resources theo thỏa thuận; không conflict lợi ích",
+      "expectations": "Market expansion; competitive advantage; long-term relationship",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Medium",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-053",
+    "identification": {
+      "name": "Integration Partners",
+      "positionRole": "Đối tác Tích hợp hệ thống",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "API documentation đầy đủ; integration specs rõ ràng; testing environment chung; SLA cho integration",
+      "expectations": "Integration mượt mà; ít downtime; technical support khi có vấn đề",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-054",
+    "identification": {
+      "name": "Resellers / Distributors",
+      "positionRole": "Đại lý phân phối",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Margin và pricing rõ ràng; marketing materials đầy đủ; support kịp thời; product knowledge",
+      "expectations": "Lợi nhuận tốt; sản phẩm bán chạy; relationship lâu dài",
+      "phaseOfMostImpact": ["Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-055",
+    "identification": {
+      "name": "Academic / Research Institutions",
+      "positionRole": "Tổ chức Học thuật / Nghiên cứu",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Data sharing agreement; attribution rõ ràng; research findings được tôn trọng",
+      "expectations": "Publication và recognition; dữ liệu có giá trị nghiên cứu; collaboration lâu dài",
+      "phaseOfMostImpact": ["Initiating", "Planning"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-056",
+    "identification": {
+      "name": "Regulatory Agencies",
+      "positionRole": "Cơ quan Quản lý nhà nước",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tuân thủ đầy đủ regulations; báo cáo đúng hạn; không có vi phạm",
+      "expectations": "Tổ chức hoạt động trong khuôn khổ pháp luật; industry standards được tôn trọng",
+      "phaseOfMostImpact": ["Planning", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Low",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-057",
+    "identification": {
+      "name": "Data Protection Authorities",
+      "positionRole": "Cơ quan Bảo vệ Dữ liệu (GDPR / PDPA)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tuân thủ GDPR/PDPA; privacy by design; data breach notification procedure; consent management",
+      "expectations": "Không có data breach; user rights được tôn trọng; compliance documentation đầy đủ",
+      "phaseOfMostImpact": ["Planning", "Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Medium",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-058",
+    "identification": {
+      "name": "Tax Authorities",
+      "positionRole": "Cơ quan Thuế",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Kê khai và nộp thuế đúng hạn; tài chính minh bạch; tuân thủ tax regulations",
+      "expectations": "Không có tax evasion; doanh nghiệp tuân thủ đầy đủ",
+      "phaseOfMostImpact": ["Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Medium",
+      "interest": "Low",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-059",
+    "identification": {
+      "name": "Standards Bodies",
+      "positionRole": "Tổ chức Tiêu chuẩn (ISO, IEEE, PMBOK)",
+      "contactInformation": "N/A - Public standards"
+    },
+    "assessment": {
+      "requirements": "Tuân thủ relevant standards; certification nếu cần; documentation theo chuẩn",
+      "expectations": "Industry standards được áp dụng đúng; không có deviation",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-060",
+    "identification": {
+      "name": "Licensing Authorities",
+      "positionRole": "Cơ quan Cấp phép",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Nộp hồ sơ đúng hạn; đáp ứng điều kiện cấp phép; renewal kịp thời",
+      "expectations": "License được cấp và duy trì; tổ chức hoạt động hợp pháp",
+      "phaseOfMostImpact": ["Initiating", "Planning"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Low",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-061",
+    "identification": {
+      "name": "Venture Capital / Angel Investors",
+      "positionRole": "Nhà đầu tư mạo hiểm / Nhà đầu tư thiên thần",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Pitch deck rõ ràng; financial projections thực tế; traction metrics; exit strategy; due diligence documents",
+      "expectations": "Return on investment cao; equity stake hợp lý; startup có potential tăng trưởng nhanh",
+      "phaseOfMostImpact": ["Initiating", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-062",
+    "identification": {
+      "name": "Shareholders",
+      "positionRole": "Cổ đông",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Báo cáo tài chính định kỳ; dividends; không có rủi ro làm giảm giá trị cổ phần",
+      "expectations": "Shareholder value tăng; company growth; governance tốt",
+      "phaseOfMostImpact": ["Initiating", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Medium",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-063",
+    "identification": {
+      "name": "Board of Directors",
+      "positionRole": "Hội đồng Quản trị",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Báo cáo chiến lược định kỳ; không có rủi ro lớn không được báo cáo; governance compliance",
+      "expectations": "Tổ chức hoạt động hiệu quả; shareholder value tăng; không có scandal",
+      "phaseOfMostImpact": ["Initiating", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-064",
+    "identification": {
+      "name": "Banks / Financial Institutions",
+      "positionRole": "Ngân hàng / Tổ chức Tài chính",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Trả nợ / phí đúng hạn; financial statements minh bạch; tuân thủ loan covenants",
+      "expectations": "Credit worthiness tốt; không có default; relationship lâu dài",
+      "phaseOfMostImpact": ["Initiating", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Medium",
+      "interest": "Low",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-065",
+    "identification": {
+      "name": "Potential Future Investors",
+      "positionRole": "Nhà đầu tư tiềm năng (tương lai, sau MVP)",
+      "contactInformation": "TBD"
+    },
+    "assessment": {
+      "requirements": "Business model rõ ràng; user metrics impressive; scalability potential; clear monetization plan",
+      "expectations": "ROI potential cao; market size đủ lớn; team capability proven; demo ấn tượng",
+      "phaseOfMostImpact": ["Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-066",
+    "identification": {
+      "name": "Local Community / Residents",
+      "positionRole": "Cộng đồng địa phương / Cư dân",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Không gây ảnh hưởng tiêu cực đến cộng đồng; tham vấn khi có tác động; CSR activities",
+      "expectations": "Tổ chức đóng góp tích cực cho cộng đồng; tạo việc làm; không gây ô nhiễm hay gián đoạn",
+      "phaseOfMostImpact": ["Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-067",
+    "identification": {
+      "name": "Environmental Groups",
+      "positionRole": "Nhóm / Tổ chức Môi trường",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Không gây tác động tiêu cực đến môi trường; sustainability practices; transparency về environmental impact",
+      "expectations": "Tổ chức có trách nhiệm với môi trường; ESG compliance",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-068",
+    "identification": {
+      "name": "Labor Unions",
+      "positionRole": "Công đoàn lao động",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tuân thủ labor agreements; không vi phạm quyền lợi người lao động; tham vấn khi có thay đổi lớn",
+      "expectations": "Quyền lợi thành viên được bảo vệ; không có labor disputes",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-069",
+    "identification": {
+      "name": "NGOs / Advocacy Groups",
+      "positionRole": "Tổ chức phi chính phủ / Nhóm vận động",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Không vi phạm các vấn đề xã hội mà NGO quan tâm; transparency về impact; engagement nếu cần",
+      "expectations": "Tổ chức hoạt động có trách nhiệm xã hội",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-070",
+    "identification": {
+      "name": "Professional Associations",
+      "positionRole": "Hiệp hội Chuyên môn (PMI, IEEE, ACM...)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tuân thủ professional ethics; đóng góp vào body of knowledge",
+      "expectations": "Members được benefit; industry standards được promote",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-071",
+    "identification": {
+      "name": "Media / Press",
+      "positionRole": "Báo chí / Truyền thông",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Thông tin chính xác và kịp thời; press release khi có news; spokesperson rõ ràng",
+      "expectations": "Câu chuyện hay để đưa tin; không có thông tin sai lệch",
+      "phaseOfMostImpact": ["Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Medium",
+      "interest": "Low",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-072",
+    "identification": {
+      "name": "Industry Analysts",
+      "positionRole": "Nhà phân tích Ngành",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Thông tin về sản phẩm và roadmap; access cho briefing; data và metrics",
+      "expectations": "Coverage tích cực; positioning đúng trong market",
+      "phaseOfMostImpact": ["Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Medium",
+      "interest": "Low",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-073",
+    "identification": {
+      "name": "Bloggers / Influencers (KOL)",
+      "positionRole": "Blogger / Người có ảnh hưởng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Sản phẩm có giá trị để review; early access; authentic experience",
+      "expectations": "Reach audience mới; organic promotion; user acquisition",
+      "phaseOfMostImpact": ["Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-074",
+    "identification": {
+      "name": "Social Media Communities",
+      "positionRole": "Cộng đồng Mạng xã hội",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Nội dung có giá trị; engagement thực sự; không spam",
+      "expectations": "Thông tin hữu ích; brand awareness tăng",
+      "phaseOfMostImpact": ["Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-075",
+    "identification": {
+      "name": "Competitors",
+      "positionRole": "Đối thủ cạnh tranh (Monitor only - không engage trực tiếp)",
+      "contactInformation": "N/A - Public research only"
+    },
+    "assessment": {
+      "requirements": "N/A - Theo dõi để differentiate; competitive analysis định kỳ",
+      "expectations": "Giữ market share; mong dự án không tạo được competitive advantage",
+      "phaseOfMostImpact": ["Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Resistant",
+      "desiredAttitude": "Neutral"
+    }
+  },
+  {
+    "stakeholderId": "SH-076",
+    "identification": {
+      "name": "Market Research Firms",
+      "positionRole": "Công ty Nghiên cứu Thị trường",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Access đến product để research; phối hợp khi cần data về user behavior",
+      "expectations": "Market insights valuable; positioning guidance",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "Low",
+      "interest": "Low",
+      "influence": "Low",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-077",
+    "identification": {
+      "name": "Instructor / Professor",
+      "positionRole": "Giảng viên / Giáo sư hướng dẫn",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Demo đúng hạn; đáp ứng academic requirements; documentation đầy đủ; báo cáo cuối kỳ submitted",
+      "expectations": "Sản phẩm hoàn chỉnh; sinh viên học được kinh nghiệm thực tế; grade tốt cho môn học",
+      "phaseOfMostImpact": ["Initiating", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-078",
+    "identification": {
+      "name": "Students / Teammates (Academic)",
+      "positionRole": "Sinh viên / Thành viên nhóm (dự án học thuật)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Phân công công việc công bằng; communication rõ ràng; deadline được thống nhất; peer review fair",
+      "expectations": "Grade tốt; học được kỹ năng mới; dự án hoàn thành đúng hạn; teamwork hiệu quả",
+      "phaseOfMostImpact": ["Planning", "Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-079",
+    "identification": {
+      "name": "Academic Advisor / Supervisor",
+      "positionRole": "Cố vấn học thuật / Người giám sát luận văn",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Báo cáo tiến độ định kỳ; tuân thủ academic standards; methodology rõ ràng; thesis/capstone submission đúng hạn",
+      "expectations": "Sinh viên đạt kết quả tốt; research có đóng góp học thuật; publication potential",
+      "phaseOfMostImpact": ["Initiating", "Planning", "Monitoring", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-080",
+    "identification": {
+      "name": "Thesis Defense Committee",
+      "positionRole": "Hội đồng bảo vệ luận văn / đồ án",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tài liệu nộp đúng hạn; demo hoạt động ổn định; presentation rõ ràng; trả lời câu hỏi tốt",
+      "expectations": "Sinh viên thể hiện đủ năng lực; dự án đạt chuẩn học thuật; đánh giá công bằng",
+      "phaseOfMostImpact": ["Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Medium",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-081",
+    "identification": {
+      "name": "Network / Infrastructure Team",
+      "positionRole": "Đội Hạ tầng Mạng",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Network requirements rõ ràng; bandwidth và latency specs; firewall rules được approve; maintenance schedule phối hợp",
+      "expectations": "Network ổn định; không có bottlenecks; security được đảm bảo; uptime cao",
+      "phaseOfMostImpact": ["Planning", "Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-082",
+    "identification": {
+      "name": "Data Engineer / Data Scientist",
+      "positionRole": "Kỹ sư Dữ liệu / Nhà khoa học Dữ liệu",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Data pipeline requirements rõ ràng; access đến data sources; compute resources đủ; data quality standards",
+      "expectations": "Data clean và reliable; models accurate; insights có giá trị; pipeline tự động hóa",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-083",
+    "identification": {
+      "name": "Mobile Platform Providers",
+      "positionRole": "Nhà cung cấp nền tảng di động (Apple App Store / Google Play)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tuân thủ App Store / Play Store guidelines; review process timeline; không vi phạm platform policies; in-app purchase rules",
+      "expectations": "App được approve và publish; không bị remove; rating tốt trên store",
+      "phaseOfMostImpact": ["Executing", "Closing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Low",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-084",
+    "identification": {
+      "name": "Systems Administrator",
+      "positionRole": "Quản trị Hệ thống",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "System requirements rõ ràng; access quyền hạn phù hợp; maintenance windows được thông báo",
+      "expectations": "Hệ thống ổn định; ít incidents; monitoring đầy đủ",
+      "phaseOfMostImpact": ["Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "Medium",
+      "influence": "Medium",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-085",
+    "identification": {
+      "name": "Security Architect",
+      "positionRole": "Kiến trúc sư Bảo mật",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Security requirements được tích hợp từ đầu (security by design); threat modeling; penetration testing",
+      "expectations": "Hệ thống bảo mật từ architecture level; không có critical vulnerabilities",
+      "phaseOfMostImpact": ["Planning", "Executing"]
+    },
+    "classificationAndEngagement": {
+      "classification": "Internal",
+      "power": "Medium",
+      "interest": "High",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-086",
+    "identification": {
+      "name": "OAuth / Identity Providers",
+      "positionRole": "Nhà cung cấp OAuth / Identity (Google, Facebook, Auth0...)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "Tuân thủ OAuth 2.0 standards; API keys bảo mật; không vi phạm platform policies",
+      "expectations": "Login flow mượt mà; user data an toàn; không bị revoke API access",
+      "phaseOfMostImpact": ["Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Low",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  },
+  {
+    "stakeholderId": "SH-087",
+    "identification": {
+      "name": "Video / Voice Call API Providers",
+      "positionRole": "Nhà cung cấp Video/Voice API (Twilio, Agora, Daily.co, WebRTC...)",
+      "contactInformation": ""
+    },
+    "assessment": {
+      "requirements": "API integration theo documentation; usage trong free tier / budget; latency requirements; không vi phạm ToS",
+      "expectations": "Video call stable; low latency; pricing trong budget; SDK dễ tích hợp",
+      "phaseOfMostImpact": ["Executing", "Monitoring"]
+    },
+    "classificationAndEngagement": {
+      "classification": "External",
+      "power": "High",
+      "interest": "Low",
+      "influence": "High",
+      "currentAttitude": "Neutral",
+      "desiredAttitude": "Supportive"
+    }
+  }
+]

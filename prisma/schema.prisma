@@ -26,6 +26,7 @@ model User {
   refreshTokens RefreshToken[]
   notifications Notification[]
   files         File[]
+  projects      Project[]
 
   @@index([email])
   @@index([role])
@@ -89,3 +90,92 @@ enum Role {
   MODERATOR
 }
 
+model Project {
+  id          String   @id @default(uuid())
+  name        String   @db.VarChar(255)
+  description String?  @db.Text
+  userId      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  deletedAt   DateTime?
+
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stakeholders Stakeholder[]
+
+  @@index([userId])
+  @@index([name])
+  @@map("projects")
+}
+
+model Stakeholder {
+  id        String   @id @default(uuid())
+  projectId String
+
+  // Identification (Section 1)
+  name               String   @db.VarChar(255)
+  positionRole       String?  @db.VarChar(255)
+  contactInformation String?  @db.Text
+
+  // Assessment (Section 2)
+  requirements      String? @db.Text
+  expectations      String? @db.Text
+  phaseOfMostImpact String? @db.Text // Can be stored as JSON array if needed, but String is simpler for MVP
+
+  // Classification & Engagement (Section 3)
+  classification Classification?
+  power          Level?
+  interest       Level?
+  influence      Level?
+  currentAttitude Attitude?
+  desiredAttitude Attitude?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+  @@map("stakeholders")
+}
+
+model StakeholderTemplate {
+  id                 String   @id @default(uuid())
+  stakeholderId      String   @unique // SH-001, etc.
+  name               String   @db.VarChar(255)
+  positionRole       String?  @db.VarChar(255)
+  contactInformation String?  @db.Text
+  requirements       String?  @db.Text
+  expectations       String?  @db.Text
+  phaseOfMostImpact  String?  @db.Text // Store as comma-separated string or JSON
+  classification     Classification?
+  power              Level?
+  interest           Level?
+  influence          Level?
+  currentAttitude    Attitude?
+  desiredAttitude    Attitude?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("stakeholder_templates")
+}
+
+enum Classification {
+  Internal
+  External
+}
+
+enum Level {
+  High
+  Medium
+  Low
+}
+
+enum Attitude {
+  Unaware
+  Resistant
+  Neutral
+  Supportive
+  Leading
+}

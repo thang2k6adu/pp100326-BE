@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
+import stakeholders from '../stakeholder.json';
 
 const prisma = new PrismaClient();
 
@@ -33,6 +34,34 @@ async function main() {
   });
 
   console.log({ admin, user });
+
+  // Seed Stakeholder Templates
+  console.log(`Seeding ${stakeholders.length} stakeholder templates...`);
+
+  for (const item of stakeholders) {
+    await prisma.stakeholderTemplate.upsert({
+      where: { stakeholderId: item.stakeholderId },
+      update: {},
+      create: {
+        stakeholderId: item.stakeholderId,
+        name: item.identification.name,
+        positionRole: item.identification.positionRole || null,
+        contactInformation: item.identification.contactInformation || null,
+        requirements: item.assessment.requirements || null,
+        expectations: item.assessment.expectations || null,
+        phaseOfMostImpact: Array.isArray(item.assessment.phaseOfMostImpact)
+          ? item.assessment.phaseOfMostImpact.join(', ')
+          : item.assessment.phaseOfMostImpact || null,
+        classification: item.classificationAndEngagement.classification || null,
+        power: item.classificationAndEngagement.power || null,
+        interest: item.classificationAndEngagement.interest || null,
+        influence: item.classificationAndEngagement.influence || null,
+        currentAttitude: item.classificationAndEngagement.currentAttitude || null,
+        desiredAttitude: item.classificationAndEngagement.desiredAttitude || null,
+      },
+    });
+  }
+  console.log(`Stakeholder templates seeded successfully.`);
 }
 
 main()
@@ -43,4 +72,3 @@ main()
   .finally(async () => {
     await prisma.$disconnect();
   });
-

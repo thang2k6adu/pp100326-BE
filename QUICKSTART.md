@@ -55,7 +55,7 @@ Chạy PostgreSQL và Redis trong Docker, app chạy local với hot reload.
 ### Bước 1: Start Database Services
 
 ```bash
-docker-compose up -d db redis
+docker compose up -d db redis
 ```
 
 ### Bước 2: Cài Đặt Dependencies
@@ -96,7 +96,7 @@ REDIS_PORT=6379
 ```bash
 npm run prisma:generate
 npm run prisma:migrate
-npm run prisma:seed  # Optional
+npm run prisma:seed
 ```
 
 ### Bước 5: Start Development Server
