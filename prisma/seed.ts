@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Classification, Level, Attitude } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 import stakeholders from '../stakeholder.json';
 
@@ -52,12 +52,12 @@ async function main() {
         phaseOfMostImpact: Array.isArray(item.assessment.phaseOfMostImpact)
           ? item.assessment.phaseOfMostImpact.join(', ')
           : item.assessment.phaseOfMostImpact || null,
-        classification: item.classificationAndEngagement.classification || null,
-        power: item.classificationAndEngagement.power || null,
-        interest: item.classificationAndEngagement.interest || null,
-        influence: item.classificationAndEngagement.influence || null,
-        currentAttitude: item.classificationAndEngagement.currentAttitude || null,
-        desiredAttitude: item.classificationAndEngagement.desiredAttitude || null,
+        classification: (item.classificationAndEngagement.classification as Classification) || null,
+        power: (item.classificationAndEngagement.power as Level) || null,
+        interest: (item.classificationAndEngagement.interest as Level) || null,
+        influence: (item.classificationAndEngagement.influence as Level) || null,
+        currentAttitude: (item.classificationAndEngagement.currentAttitude as Attitude) || null,
+        desiredAttitude: (item.classificationAndEngagement.desiredAttitude as Attitude) || null,
       },
     });
   }

@@ -12,16 +12,19 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  password  String
-  firstName String?
-  lastName  String?
-  role      Role     @default(USER)
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  deletedAt DateTime?
+  id          String    @id @default(uuid())
+  firebaseUid String?   @unique
+  email       String    @unique
+  password    String?
+  firstName   String?
+  lastName    String?
+  avatar      String?
+  role        Role      @default(USER)
+  isActive    Boolean   @default(true)
+  lastLogin   DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
 
   refreshTokens RefreshToken[]
   notifications Notification[]
@@ -46,15 +49,15 @@ model RefreshToken {
 }
 
 model Notification {
-  id        String   @id @default(uuid())
+  id        String    @id @default(uuid())
   userId    String
   type      String
   title     String
   message   String
   data      Json?
-  read      Boolean  @default(false)
+  read      Boolean   @default(false)
   readAt    DateTime?
-  createdAt DateTime @default(now())
+  createdAt DateTime  @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -64,18 +67,18 @@ model Notification {
 }
 
 model File {
-  id          String   @id @default(uuid())
-  key         String   @unique
-  url         String
-  filename    String
-  mimetype    String
-  size        Int
-  provider    String   @default("local")
-  folder      String?
-  userId      String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  deletedAt   DateTime?
+  id        String    @id @default(uuid())
+  key       String    @unique
+  url       String
+  filename  String
+  mimetype  String
+  size      Int
+  provider  String    @default("local")
+  folder    String?
+  userId    String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
 
   user User? @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -91,12 +94,12 @@ enum Role {
 }
 
 model Project {
-  id          String   @id @default(uuid())
-  name        String   @db.VarChar(255)
-  description String?  @db.Text
+  id          String    @id @default(uuid())
+  name        String    @db.VarChar(255)
+  description String?   @db.Text
   userId      String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
   deletedAt   DateTime?
 
   user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -108,13 +111,13 @@ model Project {
 }
 
 model Stakeholder {
-  id        String   @id @default(uuid())
+  id        String @id @default(uuid())
   projectId String
 
   // Identification (Section 1)
-  name               String   @db.VarChar(255)
-  positionRole       String?  @db.VarChar(255)
-  contactInformation String?  @db.Text
+  name               String  @db.VarChar(255)
+  positionRole       String? @db.VarChar(255)
+  contactInformation String? @db.Text
 
   // Assessment (Section 2)
   requirements      String? @db.Text
@@ -122,15 +125,15 @@ model Stakeholder {
   phaseOfMostImpact String? @db.Text // Can be stored as JSON array if needed, but String is simpler for MVP
 
   // Classification & Engagement (Section 3)
-  classification Classification?
-  power          Level?
-  interest       Level?
-  influence      Level?
+  classification  Classification?
+  power           Level?
+  interest        Level?
+  influence       Level?
   currentAttitude Attitude?
   desiredAttitude Attitude?
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
   deletedAt DateTime?
 
   project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
@@ -140,14 +143,14 @@ model Stakeholder {
 }
 
 model StakeholderTemplate {
-  id                 String   @id @default(uuid())
-  stakeholderId      String   @unique // SH-001, etc.
-  name               String   @db.VarChar(255)
-  positionRole       String?  @db.VarChar(255)
-  contactInformation String?  @db.Text
-  requirements       String?  @db.Text
-  expectations       String?  @db.Text
-  phaseOfMostImpact  String?  @db.Text // Store as comma-separated string or JSON
+  id                 String          @id @default(uuid())
+  stakeholderId      String          @unique // SH-001, etc.
+  name               String          @db.VarChar(255)
+  positionRole       String?         @db.VarChar(255)
+  contactInformation String?         @db.Text
+  requirements       String?         @db.Text
+  expectations       String?         @db.Text
+  phaseOfMostImpact  String?         @db.Text // Store as comma-separated string or JSON
   classification     Classification?
   power              Level?
   interest           Level?

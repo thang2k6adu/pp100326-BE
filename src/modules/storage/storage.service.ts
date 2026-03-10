@@ -2,7 +2,7 @@ import { Injectable, BadRequestException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { S3Provider } from './providers/s3.provider';
 import { LocalProvider } from './providers/local.provider';
-import * as sharp from 'sharp';
+import sharp from 'sharp';
 
 export interface UploadFileOptions {
   file: Express.Multer.File;

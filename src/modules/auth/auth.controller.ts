@@ -3,12 +3,13 @@ import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RegisterDto } from './dto/register.dto';
+import { FirebaseLoginDto } from './dto/firebase-login.dto';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
 import { LocalAuthGuard } from './guards/local-auth.guard';
 import { CurrentUser } from '@/common/decorators/current-user.decorator';
 import { JwtAuthGuard } from '@/common/guards/jwt-auth.guard';
 import { Public } from '@/common/decorators/public.decorator';
-import { AuthResponse } from '@/common/interfaces/api-response.interface';
+import { AuthResponse, FirebaseLoginResponse } from '@/common/interfaces/api-response.interface';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -64,6 +65,18 @@ export class AuthController {
   })
   async login(@Body() loginDto: LoginDto): Promise<AuthResponse> {
     return this.authService.login(loginDto);
+  }
+
+  @Public()
+  @Post('firebase-login')
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({ summary: 'Login user with Firebase ID Token' })
+  @ApiResponse({
+    status: 200,
+    description: 'User successfully logged in with Firebase',
+  })
+  async firebaseLogin(@Body() firebaseLoginDto: FirebaseLoginDto): Promise<FirebaseLoginResponse> {
+    return this.authService.firebaseLogin(firebaseLoginDto);
   }
 
   @Public()

@@ -6,6 +6,7 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LocalStrategy } from './strategies/local.strategy';
+import { FirebaseService } from './services/firebase.service';
 import { PrismaService } from '@/database/prisma.service';
 
 @Module({
@@ -23,7 +24,7 @@ import { PrismaService } from '@/database/prisma.service';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy, LocalStrategy, PrismaService],
+  providers: [AuthService, FirebaseService, JwtStrategy, LocalStrategy, PrismaService],
   exports: [AuthService],
 })
 export class AuthModule {}
