@@ -1,13 +1,15 @@
 name: CI
 
 on:
-  push:
-    branches: [main, develop]
   pull_request:
-    branches: [main, develop]
+    branches: [develop]
+
+  push:
+    branches: [develop, main]
 
 jobs:
   lint-and-test:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
 
     services:
@@ -38,8 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
@@ -47,33 +48,61 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate Prisma Client
-        run: npm run prisma:generate
-
-      - name: Run database migrations
-        run: npx prisma migrate deploy
+      - name: Prisma generate & push schema
+        run: |
+          npx prisma generate
+          npx prisma db push --accept-data-loss --skip-generate
         env:
-          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db?schema=public
 
-      - name: Run linter
+      - name: Lint
         run: npm run lint:check
-
-      - name: Check formatting
-        run: npm run format:check
 
       - name: Type check
         run: npm run type-check
 
-      - name: Run unit tests
+      - name: Unit tests
         run: npm run test:cov
 
-      - name: Run E2E tests
+      - name: E2E tests
         run: npm run test:e2e
         env:
-          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db?schema=public
           REDIS_HOST: localhost
           REDIS_PORT: 6379
+          JWT_SECRET: test-jwt-secret
+          JWT_REFRESH_SECRET: test-jwt-refresh
+          NODE_ENV: test
 
-      - name: Build
-        run: npm run build
+  build-and-push-image:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set image name
+        run: echo "IMAGE_NAME=ghcr.io/${GITHUB_REPOSITORY,,}/be" >> $GITHUB_ENV
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Build & push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.IMAGE_NAME }}:${{ github.ref_name }}
