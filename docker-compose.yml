@@ -12,15 +12,12 @@ services:
     environment:
       - NODE_ENV=production
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/nest_boilerplate?schema=public
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
       - JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
       - JWT_EXPIRES_IN=2h
       - JWT_REFRESH_SECRET=your-super-secret-refresh-key-change-this-in-production
       - JWT_REFRESH_EXPIRES_IN=7d
     depends_on:
       - db
-      - redis
     networks:
       - nest-network
     restart: unless-stopped
@@ -45,25 +42,8 @@ services:
       timeout: 5s
       retries: 5
 
-  redis:
-    image: redis:7-alpine
-    container_name: nest-boilerplate-redis
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-    networks:
-      - nest-network
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
 volumes:
   postgres_data:
-  redis_data:
 
 networks:
   nest-network:

@@ -50,12 +50,12 @@ docker-compose up -d --build
 
 ## 💻 Cách 2: Development Mode (Khuyến Nghị)
 
-Chạy PostgreSQL và Redis trong Docker, app chạy local với hot reload.
+Chạy PostgreSQL trong Docker, app chạy local với hot reload.
 
 ### Bước 1: Start Database Services
 
 ```bash
-docker compose up -d db redis
+docker compose up -d db
 ```
 
 ### Bước 2: Cài Đặt Dependencies
@@ -85,10 +85,6 @@ JWT_SECRET=your-super-secret-jwt-key
 JWT_EXPIRES_IN=2h
 JWT_REFRESH_SECRET=your-super-secret-refresh-key
 JWT_REFRESH_EXPIRES_IN=7d
-
-# Redis (localhost vì app chạy ngoài Docker)
-REDIS_HOST=localhost
-REDIS_PORT=6379
 ```
 
 ### Bước 4: Setup Database
@@ -111,7 +107,7 @@ npm run start:dev
 ### Stop Services
 
 ```bash
-docker-compose stop db redis
+docker-compose stop db
 ```
 
 ---
@@ -150,7 +146,6 @@ curl -X POST http://localhost:3000/api/auth/login \
 | Lỗi                         | Giải pháp                                                 |
 | --------------------------- | --------------------------------------------------------- |
 | Cannot connect to database  | Chạy `docker-compose up -d db` và kiểm tra DATABASE_URL   |
-| Redis connection failed     | Chạy `docker-compose up -d redis`                         |
 | Port 3000 already in use    | Đổi PORT trong .env hoặc `lsof -ti:3000 \| xargs kill -9` |
 | Prisma Client not generated | Chạy `npm run prisma:generate`                            |
 

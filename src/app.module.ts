@@ -5,7 +5,6 @@ import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
 import { APP_GUARD, APP_INTERCEPTOR, APP_FILTER, APP_PIPE } from '@nestjs/core';
 import { WinstonModule } from 'nest-winston';
 import * as winston from 'winston';
-import { redisStore } from 'cache-manager-redis-yet';
 import { AuthModule } from './modules/auth/auth.module';
 import { UsersModule } from './modules/users/users.module';
 import { HealthModule } from './modules/health/health.module';
@@ -27,7 +26,6 @@ import { CacheService } from './common/services/cache.service';
 import appConfig from './config/app.config';
 import databaseConfig from './config/database.config';
 import jwtConfig from './config/jwt.config';
-import redisConfig from './config/redis.config';
 import firebaseConfig from './config/firebase.config';
 import { validate } from './config/config.schema';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
@@ -41,30 +39,13 @@ import { ValidationPipe } from './common/pipes/validation.pipe';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [appConfig, databaseConfig, jwtConfig, redisConfig, firebaseConfig],
+      load: [appConfig, databaseConfig, jwtConfig, firebaseConfig],
       validate,
       envFilePath: ['.env.local', '.env'],
     }),
-    CacheModule.registerAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService) => {
-        const redisHost = configService.get<string>('redis.host');
-        const redisPort = configService.get<number>('redis.port');
-        const redisPassword = configService.get<string>('redis.password');
-
-        return {
-          store: await redisStore({
-            socket: {
-              host: redisHost,
-              port: redisPort,
-            },
-            password: redisPassword || undefined,
-            ttl: 60000, // Default TTL: 60 seconds
-          }),
-        };
-      },
-      inject: [ConfigService],
+    CacheModule.register({
       isGlobal: true,
+      ttl: 60000, // Default TTL: 60 seconds (in milliseconds)
     }),
     ThrottlerModule.forRootAsync({
       imports: [ConfigModule],
