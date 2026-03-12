@@ -31,4 +31,69 @@ export class StakeholderTemplatesService {
 
     return paginate(templates, total, page, limit);
   }
+
+  async findOne(id: string) {
+    const template = await this.prisma.stakeholderTemplate.findUnique({
+      where: { id },
+    });
+
+    if (!template) {
+      throw new Error(`Stakeholder Template with ID ${id} not found`);
+    }
+
+    return template;
+  }
+
+  async create(createDto: any) {
+    let score = createDto.score;
+    if (score === undefined && createDto.power && createDto.interest) {
+      const getVal = (level: string) => {
+        if (level === 'High') return 3;
+        if (level === 'Medium') return 2;
+        if (level === 'Low') return 1;
+        return 0;
+      };
+      score = getVal(createDto.power) * getVal(createDto.interest);
+    }
+
+    return this.prisma.stakeholderTemplate.create({
+      data: {
+        ...createDto,
+        score,
+      },
+    });
+  }
+
+  async update(id: string, updateDto: any) {
+    const existing = await this.findOne(id);
+
+    let score = updateDto.score;
+    const power = updateDto.power || existing.power;
+    const interest = updateDto.interest || existing.interest;
+
+    if (score === undefined && power && interest) {
+      const getVal = (level: string) => {
+        if (level === 'High') return 3;
+        if (level === 'Medium') return 2;
+        if (level === 'Low') return 1;
+        return 0;
+      };
+      score = getVal(power) * getVal(interest);
+    }
+
+    return this.prisma.stakeholderTemplate.update({
+      where: { id },
+      data: {
+        ...updateDto,
+        score,
+      },
+    });
+  }
+
+  async remove(id: string) {
+    await this.findOne(id);
+    return this.prisma.stakeholderTemplate.delete({
+      where: { id },
+    });
+  }
 }

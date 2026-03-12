@@ -11,8 +11,22 @@ export class StakeholdersService {
   constructor(private prisma: PrismaService) {}
 
   async create(createStakeholderDto: CreateStakeholderDto) {
+    let score = createStakeholderDto.score;
+    if (score === undefined && createStakeholderDto.power && createStakeholderDto.interest) {
+      const getVal = (level: string) => {
+        if (level === 'High') return 3;
+        if (level === 'Medium') return 2;
+        if (level === 'Low') return 1;
+        return 0;
+      };
+      score = getVal(createStakeholderDto.power) * getVal(createStakeholderDto.interest);
+    }
+
     const stakeholder = await this.prisma.stakeholder.create({
-      data: createStakeholderDto,
+      data: {
+        ...createStakeholderDto,
+        score,
+      },
     });
     return stakeholder;
   }
@@ -87,11 +101,28 @@ export class StakeholdersService {
   }
 
   async update(id: string, updateStakeholderDto: UpdateStakeholderDto) {
-    await this.findOne(id);
+    const existing = await this.findOne(id);
+
+    let score = updateStakeholderDto.score;
+    const power = updateStakeholderDto.power || existing.power;
+    const interest = updateStakeholderDto.interest || existing.interest;
+
+    if (score === undefined && power && interest) {
+      const getVal = (level: string) => {
+        if (level === 'High') return 3;
+        if (level === 'Medium') return 2;
+        if (level === 'Low') return 1;
+        return 0;
+      };
+      score = getVal(power) * getVal(interest);
+    }
 
     const updatedStakeholder = await this.prisma.stakeholder.update({
       where: { id },
-      data: updateStakeholderDto,
+      data: {
+        ...updateStakeholderDto,
+        score,
+      },
     });
 
     return updatedStakeholder;
