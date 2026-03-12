@@ -12,14 +12,22 @@ export class StakeholdersService {
 
   async create(createStakeholderDto: CreateStakeholderDto) {
     let score = createStakeholderDto.score;
-    if (score === undefined && createStakeholderDto.power && createStakeholderDto.interest) {
+    if (
+      score === undefined &&
+      (createStakeholderDto.power ||
+        createStakeholderDto.influence ||
+        createStakeholderDto.interest)
+    ) {
       const getVal = (level: string) => {
         if (level === 'High') return 3;
         if (level === 'Medium') return 2;
         if (level === 'Low') return 1;
         return 0;
       };
-      score = getVal(createStakeholderDto.power) * getVal(createStakeholderDto.interest);
+      const p = getVal(createStakeholderDto.power);
+      const inf = getVal(createStakeholderDto.influence);
+      const int = getVal(createStakeholderDto.interest);
+      score = p * 3 + inf * 2 + int * 1;
     }
 
     const stakeholder = await this.prisma.stakeholder.create({
@@ -105,16 +113,20 @@ export class StakeholdersService {
 
     let score = updateStakeholderDto.score;
     const power = updateStakeholderDto.power || existing.power;
+    const influence = updateStakeholderDto.influence || existing.influence;
     const interest = updateStakeholderDto.interest || existing.interest;
 
-    if (score === undefined && power && interest) {
+    if (score === undefined && (power || influence || interest)) {
       const getVal = (level: string) => {
         if (level === 'High') return 3;
         if (level === 'Medium') return 2;
         if (level === 'Low') return 1;
         return 0;
       };
-      score = getVal(power) * getVal(interest);
+      const p = getVal(power);
+      const inf = getVal(influence);
+      const int = getVal(interest);
+      score = p * 3 + inf * 2 + int * 1;
     }
 
     const updatedStakeholder = await this.prisma.stakeholder.update({

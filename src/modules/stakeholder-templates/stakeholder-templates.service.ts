@@ -46,14 +46,17 @@ export class StakeholderTemplatesService {
 
   async create(createDto: any) {
     let score = createDto.score;
-    if (score === undefined && createDto.power && createDto.interest) {
-      const getVal = (level: string) => {
+    if (score === undefined && (createDto.power || createDto.influence || createDto.interest)) {
+      const getVal = (level: string | undefined) => {
         if (level === 'High') return 3;
         if (level === 'Medium') return 2;
         if (level === 'Low') return 1;
         return 0;
       };
-      score = getVal(createDto.power) * getVal(createDto.interest);
+      const p = getVal(createDto.power);
+      const inf = getVal(createDto.influence);
+      const int = getVal(createDto.interest);
+      score = p * 3 + inf * 2 + int * 1;
     }
 
     return this.prisma.stakeholderTemplate.create({
@@ -69,16 +72,20 @@ export class StakeholderTemplatesService {
 
     let score = updateDto.score;
     const power = updateDto.power || existing.power;
+    const influence = updateDto.influence || existing.influence;
     const interest = updateDto.interest || existing.interest;
 
-    if (score === undefined && power && interest) {
+    if (score === undefined && (power || influence || interest)) {
       const getVal = (level: string) => {
         if (level === 'High') return 3;
         if (level === 'Medium') return 2;
         if (level === 'Low') return 1;
         return 0;
       };
-      score = getVal(power) * getVal(interest);
+      const p = getVal(power);
+      const inf = getVal(influence);
+      const int = getVal(interest);
+      score = p * 3 + inf * 2 + int * 1;
     }
 
     return this.prisma.stakeholderTemplate.update({
